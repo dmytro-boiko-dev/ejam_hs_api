@@ -1,28 +1,13 @@
 {
   "name": "ejam_hs_api",
-  "version": "1.0.0",
-  "type": "module",
+  "private": true,
   "scripts": {
-    "start": "node --loader ts-node/esm src/server.ts",
-    "test": "NODE_OPTIONS='--experimental-vm-modules' jest"
+    "install-all": "npm install --prefix server && npm install --prefix client",
+    "start-server": "npm run dev --prefix server",
+    "start-client": "npm start --prefix client",
+    "start-both": "concurrently \"npm run dev --prefix server\" \"npm start --prefix client\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "devDependencies": {
-    "@types/express": "^5.0.0",
-    "@types/jest": "^29.5.14",
-    "@types/node": "^22.12.0",
-    "@types/supertest": "^6.0.2",
-    "jest": "^29.7.0",
-    "supertest": "^7.0.0",
-    "ts-jest": "^29.2.5",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.7.3"
-  },
-  "dependencies": {
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2"
+    "concurrently": "^7.0.0"
   }
 }

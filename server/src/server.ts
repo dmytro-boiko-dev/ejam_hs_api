@@ -1,11 +1,11 @@
 import dotenv from "dotenv";
 import express from "express";
-import heroRoutes from "./routes/hero.route.ts"; // <= Use .ts here
+import heroRoutes from "./routes/hero.route.ts";
 
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 app.use(express.json());
 app.use("/api", heroRoutes);

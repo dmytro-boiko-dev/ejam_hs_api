@@ -4,21 +4,33 @@ This is Ejam's take home task.
 
 ## Setup
 
+In this monorepo `concurrently` lib used, so dependencies could be installed for both server and client with one command:
+
 ```bash
-$ npm install
+npm run install-all
+```
+
+(optional) Create .env file for the backend from the `.env.example`
+```bash
+cd server
+cp .env.example .env
 ```
 
 ## Run
 
-NOTE: `NODE_ENV` must NOT be switched to `test` in the `.env` file
+NOTE: `NODE_ENV` must NOT be switched to `test` in the `.env` file in the `server` sub folder
 
 ```bash
-$ npm start
+$ npm run start-both
 ```
 
-## Run tests
+## Run tests (backend only)
 
-NOTE: `NODE_ENV` must be switched to `test` in the `.env` file
+NOTE: `NODE_ENV` must be switched to `test` in the `.env` file in the `server` sub folder
+
+```bash
+$ cd server
+```
 
 ```bash
 $ npx jest
@@ -29,7 +41,7 @@ $ npx jest
 1. The app can be implemented using NestJS and microservices architecture. In that case the structure could be this:
 
 ```text
-   nest-heroes/
+   ejam_hs_api/
    ├─ src/
    │  ├─ app.module.ts
    │  ├─ main.ts
@@ -50,7 +62,3 @@ $ npx jest
 3. Logging and more error handling could be added
 4. Tests could be extended
 5. Authentication could be added, e.g. to restrict creation of heroes to non-authorized users
-
-
-
-
